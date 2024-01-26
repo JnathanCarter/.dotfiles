@@ -1,4 +1,3 @@
-
 local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -20,10 +19,10 @@ return require('packer').startup(function(use)
 
 
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		'nvim-telescope/telescope.nvim', branch = '0.1.x',
 		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
 
+		requires =  {{'nvim-lua/plenary.nvim'}}
 	}
 
 	--	use { "bluz71/vim-moonfly-colors", as = "moonfly" }
@@ -51,7 +50,7 @@ return require('packer').startup(function(use)
 		vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 
 	end
-	}
+}
 use {
 	'VonHeikemen/lsp-zero.nvim',
 	branch = 'v2.x',
