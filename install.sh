@@ -7,6 +7,8 @@ sudo apt install -y $LIST_OF_APPS
 
 
 #Clone, Build, and Install Neovim
+sudo rm /usr/local/bin/nvim
+sudo rm -rf /usr/local/share/nvim
 git clone https://github.com/neovim/neovim 
 git checkout stable
 cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo
