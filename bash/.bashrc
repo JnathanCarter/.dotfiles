@@ -109,7 +109,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 #Swaps caps lock and left ctrl key 
-setxkbmap -layout us -option ctrl:swapcaps
+#setxkbmap -layout us -option ctrl:swapcaps
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
