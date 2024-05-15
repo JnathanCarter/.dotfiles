@@ -34,6 +34,14 @@ return require('packer').startup(function(use)
 	use('tpope/vim-fugitive')
 	use{'ojroques/nvim-osc52'}
 	use 'mfussenegger/nvim-jdtls'
+	use({
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!:).
+		run = "make install_jsregexp"
+	})
+
 	use { 'alexghergh/nvim-tmux-navigation', config = function()
 
 		local nvim_tmux_nav = require('nvim-tmux-navigation')
@@ -49,29 +57,22 @@ return require('packer').startup(function(use)
 		vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
 		vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 
-	end
-}
-use {
-	'VonHeikemen/lsp-zero.nvim',
-	branch = 'v2.x',
-	requires = {
-		-- LSP Support
-		{'neovim/nvim-lspconfig'},             -- Required
-		{                                      -- Optional
-		'williamboman/mason.nvim',
-		run = function()
-			pcall(vim.cmd, 'MasonUpdate')
-		end,
-	},
-	{'williamboman/mason-lspconfig.nvim'}, -- Optional
+		end
+	}
+	use {
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v3.x',
+		requires = {
+			--- Uncomment the two plugins below if you want to manage the language servers from neovim
+			{'williamboman/mason.nvim'},
+			{'williamboman/mason-lspconfig.nvim'},
 
-	-- Autocompletion
-	{'hrsh7th/nvim-cmp'},     -- Required
-	{'hrsh7th/cmp-nvim-lsp'}, -- Required
-	{'L3MON4D3/LuaSnip'},     -- Required
-}
-}
-
+			{'neovim/nvim-lspconfig'},
+			{'hrsh7th/nvim-cmp'},
+			{'hrsh7th/cmp-nvim-lsp'},
+			{'L3MON4D3/LuaSnip'},
+		}
+	}
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
@@ -79,4 +80,3 @@ if packer_bootstrap then
 	require('packer').sync()
 end
 end)
-
