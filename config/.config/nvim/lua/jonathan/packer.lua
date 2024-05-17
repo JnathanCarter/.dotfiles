@@ -73,6 +73,12 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
+	use {
+	  "craftzdog/solarized-osaka.nvim",
+	  lazy = false,
+	  priority = 1000,
+	  opts = {},
+	}
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
