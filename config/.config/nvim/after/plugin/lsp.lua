@@ -5,6 +5,8 @@ lsp_zero.on_attach(function(client, bufnr)
 	-- to learn the available actions
 	lsp_zero.default_keymaps({ buffer = bufnr })
 
+	vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = bufnr})
+	
 
 end)
 
@@ -20,6 +22,9 @@ require('mason-lspconfig').setup({
 		end,
 	},
 })
+
+local lsp = require('lspconfig')
+lsp.htmx.setup{}
 
 
 local cmp = require('cmp')

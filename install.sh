@@ -1,6 +1,6 @@
 #!/bin/sh
 #Update and Install Apt Packages
-LIST_OF_APPS="i3 fzf stow vim tmux ninja-build g++ gettext cmake unzip curl git steghide gnome-tweaks ripgrep net-tools cowsay npm pip"
+LIST_OF_APPS="i3 fzf stow vim tmux ninja-build g++ gettext cmake unzip curl git steghide gnome-tweaks ripgrep net-tools cowsay npm pip fd-find"
 
 sudo apt update
 sudo apt install -y $LIST_OF_APPS
